@@ -4,7 +4,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from utils import get_robot_position
 
-def convergence_graph(best_values, mean_values, worst_values, random_individual_history, filename):
+def convergence_graph(best_values, mean_values, worst_values, filename):
     os.makedirs("graficas", exist_ok=True)
 
     plt.figure(figsize=(10,6))
@@ -12,7 +12,6 @@ def convergence_graph(best_values, mean_values, worst_values, random_individual_
     plt.plot(best_values, label="Mejor fitness", linewidth=2)
     plt.plot(mean_values, label="Promedio fitness", linestyle="--")
     plt.plot(worst_values, label="Peor fitness", linestyle=":")
-    plt.plot(random_individual_history, label="Individuo random", linestyle="-.")
 
     plt.xlabel("Iteraciones")
     plt.ylabel("Valor de la función")
